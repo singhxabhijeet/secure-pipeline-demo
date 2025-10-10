@@ -46,3 +46,19 @@ jobs:
       - name: Run Semgrep CI Scan
         # This is the new recommended command for CI environments
         run: semgrep ci
+
+dependency-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Trivy vulnerability scanner for dependencies
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: 'true'
+          severity: 'CRITICAL,HIGH'
