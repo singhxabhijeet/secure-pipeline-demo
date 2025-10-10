@@ -8,46 +8,36 @@ on:
 
 jobs:
   build:
-    # The build job remains exactly the same
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
           go-version: '1.22'
-
       - name: Build
         run: go build -v .
-
       - name: Test
         run: go test -v ./... -vet=off
-
-  # --- UPDATED SECURITY JOB ---
+  
   sast-scan:
     runs-on: ubuntu-latest
-    # The semgrep ci command reads the token from this environment variable
     env:
       SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-
       - name: Install Semgrep
         run: pip install semgrep
-
       - name: Run Semgrep CI Scan
-        # This is the new recommended command for CI environments
         run: semgrep ci
 
-dependency-scan:
+  dependency-scan:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
