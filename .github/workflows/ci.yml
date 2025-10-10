@@ -22,6 +22,18 @@ jobs:
         run: go build -v .
 
       - name: Test
-        # We don't have tests yet, but this is a good step to have.
-        # The -vet=off flag prevents an error if there are no test files.
         run: go test -v ./... -vet=off
+
+  # --- NEW SECURITY JOB ---
+  sast-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep SAST Scan
+        uses: semgrep/semgrep-action@v2
+        with:
+          # This will automatically sign you up for the free Semgrep Community Tier
+          # to get access to more rules and a dashboard.
+          publish-token: ${{ secrets.SEMGREP_APP_TOKEN }}
