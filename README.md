@@ -61,4 +61,3 @@ The value of this project is seeing the pipeline automatically block insecure co
 * **To Test Secret Scanning:** Add a fake secret to any file (e.g., `my_key := "ghp_123abc..."`). Gitleaks will find it and fail the `secret-scan` job.
 * **To Test Dependency/Image Scanning:** In the `ci.yml` file, temporarily change the `severity` in a Trivy step from `'CRITICAL,HIGH'` to `'LOW'`. The scan will likely fail because it will now detect low-severity vulnerabilities that were previously ignored.
 
----
