@@ -62,11 +62,3 @@ The value of this project is seeing the pipeline automatically block insecure co
 * **To Test Dependency/Image Scanning:** In the `ci.yml` file, temporarily change the `severity` in a Trivy step from `'CRITICAL,HIGH'` to `'LOW'`. The scan will likely fail because it will now detect low-severity vulnerabilities that were previously ignored.
 
 ---
-
-## Key Concepts Demonstrated
-
-* **DevSecOps & "Shift-Left" Security:** Integrating security into the earliest stages of development.
-* **CI/CD Automation:** Building a complex, multi-stage pipeline with job dependencies using GitHub Actions.
-* **Layered Security:** Using multiple tools (SAST, SCA, Secret Scanning, Image Scanning) to provide defense-in-depth.
-* **Artifact Management:** Generating, uploading, and processing critical compliance artifacts like **SBOMs** and **SARIF** reports.
-* **Container Security Best Practices:** Building secure, minimal, non-root container images.
