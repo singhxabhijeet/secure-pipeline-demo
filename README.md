@@ -1,6 +1,6 @@
 # The DevSecOps Pipeline 🛡️
 
-![CI Security Pipeline](https://github.com/your-username/secure-pipeline-demo/actions/workflows/ci.yml/badge.svg)
+![CI Security Pipeline](https://github.com/singhxabhijeet/secure-pipeline-demo/actions/workflows/ci.yml/badge.svg)
 
 This project demonstrates a professional-grade, multi-stage DevSecOps pipeline using GitHub Actions. The goal is to "shift left," integrating automated security checks directly into the Continuous Integration (CI) process to find and block vulnerabilities *before* they ever reach production.
 
@@ -8,7 +8,7 @@ The pipeline is built for a simple Go web application but the principles and too
 
 ---
 
-## ## Pipeline Architecture & Stages
+## Pipeline Architecture & Stages
 
 The workflow is designed with multiple parallel jobs that act as security gates. A final build job runs only if all security checks pass. The artifacts generated (SARIF and SBOM) are then processed in subsequent stages.
 
@@ -41,7 +41,7 @@ The pipeline consists of the following automated stages:
 
 ---
 
-## ## Tech Stack & Tools
+## Tech Stack & Tools
 
 * **CI/CD:** GitHub Actions
 * **Application:** Go with the Gin framework
@@ -53,7 +53,7 @@ The pipeline consists of the following automated stages:
 
 ---
 
-## ## How to Test the Security Gates
+## How to Test the Security Gates
 
 The value of this project is seeing the pipeline automatically block insecure code. You can test each gate:
 
@@ -63,7 +63,7 @@ The value of this project is seeing the pipeline automatically block insecure co
 
 ---
 
-## ## Key Concepts Demonstrated
+## Key Concepts Demonstrated
 
 * **DevSecOps & "Shift-Left" Security:** Integrating security into the earliest stages of development.
 * **CI/CD Automation:** Building a complex, multi-stage pipeline with job dependencies using GitHub Actions.
