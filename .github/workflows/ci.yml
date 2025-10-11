@@ -33,9 +33,6 @@ jobs:
           fetch-depth: 0
       - name: Run Gitleaks scan
         uses: gitleaks/gitleaks-action@v2
-        with:
-          # Tell Gitleaks to fail the job if secrets are found
-          fail: true
 
   dependency-scan:
     runs-on: ubuntu-latest
